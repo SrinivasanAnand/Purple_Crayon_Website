@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles2.css">
+    <title>Contact</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<body>
+
+    <div class="subHeading">
+        <a id="firstSub" href = "index.html">Home</a>
+        <a id="sub" href = "about.html">About</a>
+        <a id="sub" href = "crayons.html">Crayons</a>
+        <a id="sub" href = "join.html">Join</a>
+        <a id="sub" href = "shows.html">Shows</a>
+        <a id="currentSub" href = "contact.html">Contact Us</a>
+    
+    </div>
+    
+    <div id="topDiv">
+        <div id="formInstructionDiv">
+            <h1 id="formInstruction">For questions about booking, improv, or anything Crayon, leave a 
+                message below or <a id="email" href="mailto:anand.srinivasan@yale.edu">email</a> us!
+            </h1>
+        </div>
+    </div>
+    
+
+    <div id="formObject">
+
+        <div id="contactFormDiv">
+        
+            <form id="contactForm" action="contact.php" method="post">
+                <div id="userInfo">
+                    <input type="text" class="formText" id="userName" name="name" placeholder="Name*" required><br>
+                    <input type="text" class="formText" id="userEmail" name="email" placeholder="Email*" required><br>
+                    <input type="text" class="formText" id="userSubject" name="subject" placeholder="Subject"><br>
+                </div>
+                <div id="message">
+                    <textarea id="messageBox" name="messageBox" cols="40" rows="5" placeholder="Message*" required></textarea>
+                    <button id="submitButton" name="submitButton" onclick="send()">Send</button>
+                </div>
+                
+            </form>
+
+            <h1 id="thankYou"></h1>
+
+        </div>
+
+        
+    </div>
+    <script>
+
+    const form = document.getElementById("contactForm");
+
+    function send() {
+        // stop form submission
+        event.preventDefault();
+
+        // validate the form
+        let userName = form.name.value;
+        let userEmail = form.email.value;
+        let userMessage = form.messageBox.value;
+
+        console.log("submit detected")
+        console.log(userName)
+        console.log(userEmail)
+        console.log(userMessage)
+
+        document.getElementById("contactForm").style.display = "none";
+        document.getElementById("thankYou").innerHTML = "Thank You!";
+
+        $.ajax({
+           type: "POST",
+           url: "contact.php",
+           data: $("#contactForm").serialize(), // serializes the form's elements.
+           
+           success: function(data)
+           {
+            document.getElementById("contactForm").style.display = "none";
+            document.getElementById("thankYou").innerHTML = "Thank You!";
+           }
+         });
+        // if valid, submit the form.
+        return false;
+    };
+
+    </script>
+</body>
+
+</html>

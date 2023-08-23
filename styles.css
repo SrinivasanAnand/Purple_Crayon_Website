@@ -1,0 +1,215 @@
+@font-face{
+    font-family: 'Caprasimo';
+    src: url("Caprasimo/Caprasimo-Regular.ttf");
+}
+@font-face{
+    font-family: 'Shadows_Into_Light';
+    src: url("Shadows_Into_Light/ShadowsIntoLight-Regular.ttf");
+}
+@font-face{
+    font-family: 'Josefin_Sans';
+    src: url("Josefin_Sans/JosefinSans-VariableFont_wght.ttf");
+}
+
+html, body{
+    background-color: cornsilk;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+.subHeading{
+    display: flex;
+    justify-content: center;
+    font-size: 150%;
+    font-family: "Josefin_Sans";
+    background-color: #452c63;
+    padding-top: 2.0%;
+    padding-bottom: 2.5%;
+}
+
+
+a, a:link, a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+#sub{
+    text-indent: 1em;
+}
+
+#currentSub{
+    text-decoration: underline;
+    text-indent: 1em;
+}
+
+#currentAndFirstSub{
+    text-decoration: underline;
+}
+
+
+
+#centralText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+#pc {
+    font-size: 400%;
+    font-family: 'Caprasimo';
+    color: #452c63;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#firstLine {
+    color: purple;
+    font-family: 'Caprasimo';
+    font-size: 150%;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+#sentence {
+    font-size: 200%;
+    font-family: 'Shadows_Into_Light';
+    color: purple;
+    margin-top: 15px;
+}
+
+#textAndMoon {
+    display: block;
+    justify-content: center;
+    width: 100%;
+}
+
+#crayonContainer {
+    width: 50px;
+    height: 50px;
+    zoom: 0.40;
+    float: right;
+    margin-top: -130px;
+    position: relative;
+}
+
+#crayon {
+    position: absolute;
+    width: 900px;
+    right: -1383px;
+    top: -152px;
+}
+#crayonPhoto {
+    width: 750px;
+    border: 5px solid purple;
+    margin-top: 55px;
+    margin-bottom: 20px;
+}
+
+
+#jarContainer {
+    width: 50px;
+    height: 0px;
+    zoom: 0.5;
+    float: right;
+    position: relative;
+}
+
+#jar {
+    position: absolute;
+    top: -130px;
+    right: -1005px;
+}
+
+
+
+
+@media screen and (max-width: 789px){
+    #mainImage {
+        display: flex;
+        justify-content: center;
+    }
+    #crayonPhoto {
+        width: 200px;
+        width:83%;
+        margin-top: 45px;
+
+    }
+    #jar {
+        display: none;
+    }
+    #crayon {
+        display: none;
+    }
+
+    #pc {
+        font-size: 300%;
+        font-size: 7vw;
+    }
+    #firstLine {
+        font-size: 100%;
+        font-size: 3vw;
+    }
+    a, a:link, a:visited {
+        font-size: 80%;
+        font-size: 3vw;
+    }
+}
+
+
+
+
+
+
+#moonContainer {
+    zoom: 0.35;
+    float: right;
+    margin-right: 450px;
+    margin-top: -210px;
+    position: relative;
+}
+
+#moon {
+    position: absolute;
+}
+
+#moon path {
+    position: absolute;
+}
+
+#treeContainer {
+
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: -110px;
+    zoom: 0.98;
+}
+
+#tree path {
+    position: absolute;
+}
+
+#butterfly {
+    position: absolute;
+    vertical-align: top;
+    top: -385px;
+    left: -150px;
+}
+#butterflySVG {
+    position: absolute;
+    
+}
+#butterflyContainer {
+    position: relative;
+    width: 20px;
+    background-color: blue;
+    vertical-align: top;
+}
